@@ -39,6 +39,7 @@ body {
   color: white;
 }
 
+/* Main grid containers */
 .grid-container, .grid-container2 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -64,88 +65,117 @@ h3 {
   text-align: left;
 }
 
+/* First grid layout - desktop */
+@media screen and (min-width: 769px) {
+  .item1 {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+  }
 
-.item1 {
-  grid-column: 1 / span 2; /* Span 2 columns */
-  grid-row: 1;
-}
+  .item2 {
+    grid-column: 3;
+    grid-row: 1;
+  }
 
-.item2 {
-  grid-column: 3; /* Occupy column 3 */
-  grid-row: 1;
-}
+  .item3 {
+    grid-column: 4;
+    grid-row: 1;
+  }
 
-.item3 {
-  grid-column: 4; /* Occupy column 4 */
-  grid-row: 1;
-}
+  .item4 {
+    grid-column: 1 / span 4;
+    grid-row: 2;
+  }
 
-.item4 {
-  grid-column: 1 / span 4; /* Span all 4 columns */
-  grid-row: 2;
-}
+  /* Second grid layout - desktop */
+  .items1 {
+    grid-column: 1;
+    grid-row: 1;
+  }
 
-/* Second grid container */
+  .items2 {
+    grid-column: 2;
+    grid-row: 1;
+  }
 
+  .items3 {
+    grid-column: 3 / span 2;
+    grid-row: 1;
+  }
 
+  .items4 {
+    grid-column: 3;
+    grid-row: 1;
+  }
 
-.items1 {
-  grid-column: 1;
-  grid-row: 1;
-}
-
-.items2 {
-  grid-column: 2;
-  grid-row: 1;
-}
-
-.items3 {
-  grid-column: 3 / span 2; /* Span 2 columns */
-  grid-row: 1;
-}
-
-.items4 {
-  grid-column: 3; /* Span 2 columns */
-  grid-row: 1;
-}
-
-.items5 {
-  grid-column: 4; /* Span 2 columns */
-  grid-row: 1;
+  .items5 {
+    grid-column: 4;
+    grid-row: 1;
+  }
 }
 
 /* Footer */
 .footer {
   padding: 20px;
-  text-align:justify;
+  text-align: justify;
   background: #ffffff;
 }
 
 a {
-  color: rgb(3, 212, 10); /* Change to your desired color */
-  text-decoration: none; /* Removes underline if desired */
+  color: rgb(3, 212, 10);
+  text-decoration: none;
 }
 
+/* Mobile styles */
 @media screen and (max-width: 768px) {
   .grid-container, .grid-container2 {
-    grid-template-columns: 1fr; /* Stack items in a single column */
+    grid-template-columns: 1fr;
+    grid-auto-flow: row;
   }
-
-  .items, .items2, .items3, .items4, .items5 {
-    text-align: center;
+  
+  /* Reset all grid positioning for mobile */
+  .item1, .item2, .item3, .item4,
+  .items1, .items2, .items3, .items4, .items5 {
+    grid-column: 1;
+    grid-row: auto;
+    margin-bottom: 20px;
   }
-
-  .item, .item2, .item3, .item4 {
-    text-align: center;
+  
+  /* Ensure proper spacing between grid items */
+  .grid-container > div, .grid-container2 > div {
+    margin-bottom: 30px;
   }
-
+  
+  /* Add specific mobile adjustments to header */
+  .items1 img {
+    max-width: 70%;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  /* Improve typography on mobile */
   p, h3 {
-    font-size: 16px; /* Adjust font size for readability */
+    font-size: 16px;
+    line-height: 1.4;
+  }
+  
+  /* Make quotes stand out on mobile */
+  .items3 p strong {
+    display: block;
+    margin: 15px 0;
+    font-size: 18px;
+  }
+  
+  /* Add breathing room */
+  br {
+    display: none;
+  }
+  
+  p small {
+    display: block;
+    margin-top: 8px;
   }
 }
-
-
-
 </style>
 </head>
 <body>

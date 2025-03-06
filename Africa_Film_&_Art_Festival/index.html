@@ -37,13 +37,15 @@ body {
 }
 
 /* Style the top navigation bar */
+/* Update the grid container to maintain readability on small screens */
 .grid-container2 {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 3 equal columns */
+  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
   gap: 10px;
   background-color: #ffffff;
   padding: 0px;
   margin: 20px;
+  min-width: 320px; /* Set a minimum width for the container */
 }
 
 .grid-container2 > div {
@@ -51,6 +53,41 @@ body {
   text-align: left;
   padding: 0px;
   font-size: 30px;
+  min-width: 0; /* Allow the divs to shrink below their content size */
+}
+
+/* Add specific styling for the contact information div */
+.items5 p {
+  font-size: 16px; /* Set a base font size */
+  min-width: 150px; /* Ensure minimum width */
+  white-space: normal; /* Allow text to wrap */
+  word-wrap: break-word; /* Break long words if needed */
+}
+
+/* Add responsive styling for smaller screens */
+@media screen and (max-width: 700px) {
+  .grid-container2 {
+    grid-template-columns: 1fr 1fr; /* Change to 2 columns on small screens */
+    gap: 5px;
+    margin: 10px;
+  }
+  
+  .items1 {
+    grid-column: 1; /* Logo in first column */
+  }
+  
+  .items5 {
+    grid-column: 2; /* Contact info in second column */
+  }
+  
+  .items2, .items4 {
+    display: none; /* Hide empty divs on small screens */
+  }
+  
+  /* Ensure text doesn't get too small on mobile */
+  .items5 p {
+    font-size: 14px !important; /* Force minimum font size */
+  }
 }
 
 /* Column container */
@@ -80,11 +117,35 @@ p {
 
 /* Create two unequal columns that sits next to each other */
 /* Sidebar/left column */
+
+/* Update the side section to be sticky only on larger screens */
 .side {
   flex: 25%;
   background-color: #f1f1f1;
   padding: 20px;
+  position: sticky;
+  top: 120px;
+  height: fit-content;
 }
+
+/* Media query to handle small screens */
+@media screen and (max-width: 700px) {
+  .row, .navbar {   
+    flex-direction: column;
+  }
+  
+  .side {
+    position: static; /* Remove sticky positioning on small screens */
+    order: -1; /* Make the side section appear first on mobile */
+    width: 100%; /* Ensure full width */
+    height: auto; /* Allow natural height */
+  }
+  
+  .main {
+    width: 100%; /* Ensure full width */
+  }
+}
+
 
 /* Main column */
 .main {
@@ -159,7 +220,7 @@ p {
 </div>
 
 <div class="row">
-  <div class="side" style="position: sticky; top: 120px; height: fit-content;">
+  <div class="side">
     <h2>African Film & Art Festival 2023</h2>
   
     <p>
