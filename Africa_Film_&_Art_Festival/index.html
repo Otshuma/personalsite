@@ -3,7 +3,7 @@
 <head>
 <title>Osmond Tshuma</title>
 <meta charset="UTF-8">
-<meta name="AFAF" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <meta name="author" content="Osmond Tshuma">
 <meta name="keywords" content="Osmond Tshuma, Zimbabwean designer, Africa writing systems, Zimbabwe writing system, Graphic design, graphic design in Zimbabwe">
@@ -11,9 +11,8 @@
 <meta property="og:url" content="https://www.osmondtshuma.com/">
 <meta name="og:title" property="og:title" content="Osmond Tshuma">
 <meta property="og:description" content="Osmond Tshuma body of work">
-<meta property="og: image" content="./icon">
-<link rel="icon" type="png" href="./icon.png"></link>
-
+<meta property="og:image" content="./icon">
+<link rel="icon" type="png" href="./icon.png">
 
 <link rel="stylesheet" href="https://use.typekit.net/hyh7esp.css">
 
@@ -22,10 +21,10 @@
   box-sizing: border-box;
 }
 
-/* Style the body */
 body {
   font-family: "neue-haas-grotesk-display", sans-serif;
   margin: 0;
+  padding: 0;
 }
 
 /* Header/logo Title */
@@ -37,15 +36,17 @@ body {
 }
 
 /* Style the top navigation bar */
-/* Update the grid container to maintain readability on small screens */
 .grid-container2 {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+  grid-template-columns: repeat(4, 1fr);
   gap: 10px;
   background-color: #ffffff;
   padding: 0px;
   margin: 20px;
-  min-width: 320px; /* Set a minimum width for the container */
+  min-width: 300px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .grid-container2 > div {
@@ -53,47 +54,15 @@ body {
   text-align: left;
   padding: 0px;
   font-size: 30px;
-  min-width: 0; /* Allow the divs to shrink below their content size */
+  min-width: 0;
 }
 
 /* Add specific styling for the contact information div */
 .items5 p {
-  font-size: 16px; /* Set a base font size */
-  min-width: 150px; /* Ensure minimum width */
-  white-space: normal; /* Allow text to wrap */
-  word-wrap: break-word; /* Break long words if needed */
-}
-
-/* Add responsive styling for smaller screens */
-@media screen and (max-width: 430px) {
-  .grid-container2 {
-    grid-template-columns: 1fr 1fr; /* Change to 2 columns on small screens */
-    gap: 5px;
-    margin: 10px;
-  }
-  
-  .items1 {
-    grid-column: 1; /* Logo in first column */
-  }
-  
-  .items5 {
-    grid-column: 2; /* Contact info in second column */
-  }
-  
-  .items2, .items4 {
-    display: none; /* Hide empty divs on small screens */
-  }
-  
-  /* Ensure text doesn't get too small on mobile */
-  .items5 p {
-    font-size: 14px !important; /* Force minimum font size */
-  }
-}
-
-/* Column container */
-.row {  
-  display: flex;
-  flex-wrap: wrap;
+  font-size: 16px;
+  min-width: 150px;
+  white-space: normal;
+  word-wrap: break-word;
 }
 
 img {
@@ -115,10 +84,13 @@ p {
   line-height: 1.4;
 }
 
-/* Create two unequal columns that sits next to each other */
-/* Sidebar/left column */
+/* Column container */
+.row {  
+  display: flex;
+  flex-wrap: wrap;
+}
 
-/* Update the side section to be sticky only on larger screens */
+/* Sidebar/left column */
 .side {
   flex: 25%;
   background-color: #f1f1f1;
@@ -128,25 +100,6 @@ p {
   height: fit-content;
 }
 
-/* Media query to handle small screens */
-@media screen and (max-width: 430px) {
-  .row, .navbar {   
-    flex-direction: column;
-  }
-  
-  .side {
-    position: static; /* Remove sticky positioning on small screens */
-    order: -1; /* Make the side section appear first on mobile */
-    width: 100%; /* Ensure full width */
-    height: auto; /* Allow natural height */
-  }
-  
-  .main {
-    width: 100%; /* Ensure full width */
-  }
-}
-
-
 /* Main column */
 .main {
   flex: 75%;
@@ -154,7 +107,7 @@ p {
   padding-top: 0px;
   padding-left: 20px;
   padding-right: 20px;
-  gap: Opx;
+  gap: 0px;
 }
 
 .separate {
@@ -162,60 +115,95 @@ p {
   padding: 20px;
 }
 
-/* Fake image, just for this example */
-.fakeimg {
-  background-color: #aaa;
-  padding: 20px;
-}
-
 .footerflex-container {
   display: flex;
-  justify-content: space-between;
   justify-content: space-between;
   line-height: .99;
 }
 
 .footerflex-container > div {
   margin: 10px;
-  font-size: var(--size-large, 1.2rem);
+  font-size: 1.2rem;
 }
 
 /* Footer */
 .footer {
   padding: 20px;
-  text-align:justify;
+  text-align: justify;
   background: #ffffff;
 }
 
-/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+/* Mobile Responsive Adjustments */
 @media screen and (max-width: 700px) {
-  .row, .navbar {   
+  .grid-container2 {
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    margin: 10px;
+  }
+  
+  .items1 {
+    grid-column: 1;
+  }
+  
+  .items5 {
+    grid-column: 2;
+  }
+  
+  .items2, .items4 {
+    display: none;
+  }
+  
+  .items5 p {
+    font-size: 14px !important;
+  }
+  
+  .row {   
     flex-direction: column;
+  }
+  
+  .side {
+    position: static !important;
+    order: -1;
+    width: 100%;
+    flex: 100%;
+  }
+  
+  .main {
+    width: 100%;
+    flex: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  .separate {
+    padding: 10px;
+  }
+  
+  .footerflex-container {
+    font-size: 1rem;
   }
 }
 </style>
 </head>
 <body>
 
-
 <!-- Navigation Bar -->
-<div class="grid-container2" style="position: sticky; top: 0; height: fit-content;">
+<div class="grid-container2">
   <div class="items1"><a href="../index.html"><img src="osmond logo.png" width="100%" height="auto"></a></div>
   <div class="items2"> </div>
   <div class="items4"></div>
   
   <div class="items5"><p> 
-    tshumaosmond@gmail.com<br><a href="../">
+    tshumaosmond@gmail.com<br>
     <a href="https://www.instagram.com/wakwatshuma/?utm_medium=copy_link">@wakwatshuma</a>
-    
-  </div>
+  </p></div>
   
 </div>
 
 <!-- The flexible grid (content) -->
 <div class="separate">
   <div>
-    <img src="AFAFcover2.png" alt="Description of image 2" style="width:100%; height:auto;">
+    <img src="AFAFcover2.png" alt="AFAF Cover Image" style="width:100%; height:auto;">
   </div>
 </div>
 
@@ -238,12 +226,9 @@ p {
 
       <hr width="100%" height="5">
 
-
       <div class="footerflex-container">
         <div><a href="../Serif_Furniture/index.html"><strong><span style="color:gray">PREV:</span></strong></a></div>
-        
         <div><a href="../Sankofa/index.html"><strong><span style="color:gray">NEXT:</span></strong></a></div>
-        
       </div>
 
     </p>
@@ -251,42 +236,35 @@ p {
    
   </div>
   <div class="main">
-  
-    
-    <img src="2 AFAF.jpg" alt="Description of image 2" style="width:100%; height:auto;">
-    <img src="3 AFAF.jpg" alt="Description of image 2" style="width:100%; height:auto;">
-    <img src="AFAF typeface.jpg" alt="Description of image 2" style="width:100%; height:auto;">
-    <img src="AFAF typeface gold.jpg" alt="Description of image 2" style="width:100%; height:auto;">
-    <img src="AFAF typeface black.jpg" alt="Description of image 2" style="width:100%; height:auto;">
-    <img src="6 AFAF.jpg" alt="Description of image 2" style="width:100%; height:auto;">
-    <img src="4 AFAF.jpg" alt="Description of image 2" style="width:100%; height:auto;">
-    <img src="5 AFAF.jpg" alt="Description of image 2" style="width:100%; height:auto;">
-    <img src="AFAF Behance-11.jpg" alt="Description of image 2" style="width:100%; height:auto;">
-    <img src="AFAF Behance-12b.jpg" alt="Description of image 2" style="width:100%; height:auto;">
-    <img src="7 AFAF.jpg" alt="Description of image 2" style="width:100%; height:auto;">
-
-    <img src="AFAF Behance-14.jpg" alt="Description of image 2" style="width:100%; height:auto;">
-    <img src="AFAF Behance52024.jpg" alt="Description of image 2" style="width:100%; height:auto;">
-    <img src="9 AFAF.jpg" alt="Description of image 2" style="width:100%; height:auto;">
-    <img src="AFAF-Billboard-Mockups1A.jpg" alt="Description of image 2" style="width:100%; height:auto;">
-    <img src="8 AFAF.jpg" alt="Description of image 2" style="width:100%; height:auto;">
-
-   
-    <img src="10 AFAF.jpg" alt="Description of image 2" style="width:100%; height:auto;">
-
-    <img src="AFAF Behance-17.jpg" alt="Description of image 2" style="width:100%; height:auto;">
-    <img src="AFAF Behance-18.jpg" alt="Description of image 2" style="width:100%; height:auto;">
-    <img src="AFAF Behance film social media-20.jpg" alt="Description of image 2" style="width:100%; height:auto;">
-   
-
+    <img src="2 AFAF.jpg" alt="AFAF Design" style="width:100%; height:auto;">
+    <img src="3 AFAF.jpg" alt="AFAF Design" style="width:100%; height:auto;">
+    <img src="AFAF typeface.jpg" alt="AFAF Typeface" style="width:100%; height:auto;">
+    <img src="AFAF typeface gold.jpg" alt="AFAF Typeface Gold" style="width:100%; height:auto;">
+    <img src="AFAF typeface black.jpg" alt="AFAF Typeface Black" style="width:100%; height:auto;">
+    <img src="6 AFAF.jpg" alt="AFAF Design" style="width:100%; height:auto;">
+    <img src="4 AFAF.jpg" alt="AFAF Design" style="width:100%; height:auto;">
+    <img src="5 AFAF.jpg" alt="AFAF Design" style="width:100%; height:auto;">
+    <img src="AFAF Behance-11.jpg" alt="AFAF Behance" style="width:100%; height:auto;">
+    <img src="AFAF Behance-12b.jpg" alt="AFAF Behance" style="width:100%; height:auto;">
+    <img src="7 AFAF.jpg" alt="AFAF Design" style="width:100%; height:auto;">
+    <img src="AFAF Behance-14.jpg" alt="AFAF Behance" style="width:100%; height:auto;">
+    <img src="AFAF Behance52024.jpg" alt="AFAF Behance" style="width:100%; height:auto;">
+    <img src="9 AFAF.jpg" alt="AFAF Design" style="width:100%; height:auto;">
+    <img src="AFAF-Billboard-Mockups1A.jpg" alt="AFAF Billboard Mockup" style="width:100%; height:auto;">
+    <img src="8 AFAF.jpg" alt="AFAF Design" style="width:100%; height:auto;">
+    <img src="10 AFAF.jpg" alt="AFAF Design" style="width:100%; height:auto;">
+    <img src="AFAF Behance-17.jpg" alt="AFAF Behance" style="width:100%; height:auto;">
+    <img src="AFAF Behance-18.jpg" alt="AFAF Behance" style="width:100%; height:auto;">
+    <img src="AFAF Behance film social media-20.jpg" alt="AFAF Social Media" style="width:100%; height:auto;">
   </div>
 </div>
 
 <!-- Footer -->
 <div class="footer">
   <hr>
-  <p>©2025 Osmond Tshuma</p>
+  <p>©️2025 Osmond Tshuma</p>
 </div>
 
 </body>
 </html>
+
