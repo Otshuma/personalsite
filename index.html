@@ -15,18 +15,20 @@
 
 
 <link rel="stylesheet" href="https://use.typekit.net/hyh7esp.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 /* Style the body */
 body {
   font-family: "neue-haas-grotesk-display", sans-serif;
   margin: 0;
-  padding: 0px;
-
+  padding: 0;
 }
 
 /* Header/logo Title */
@@ -37,62 +39,31 @@ body {
   color: white;
 }
 
-/* Style the top navigation bar */
-.navbar {
-  display: flex;
-  background-color: #333;
+.grid-container, .grid-container2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 20px;
 }
 
-/* Style the navigation bar links */
-.navbar a {
-  color: rgb(231, 200, 200);
-  padding: 14px 20px;
-  text-decoration: none;
-  text-align: center;
-}
-
-/* Change color on hover */
-.navbar a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-
+/* Ensuring images are responsive */
 img {
-  width: 100%;
-  display: block;
-  margin: 0;
-  padding: 0;
+  max-width: 100%;
+  height: auto;
 }
 
+/* Paragraphs and Headings */
 p {
-  font-family: "neue-haas-grotesk-display", sans-serif;
   font-weight: 500;
   font-size: 18px;
 }
 
 h3 {
-  font-family: "neue-haas-grotesk-display", sans-serif;
   font-weight: 500;
   font-size: 18px;
   text-align: left;
 }
 
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
-  gap: 10px;
-  background-color: #ffffff;
-  padding: 0px;
-  margin: 20px;
-}
-
-.grid-container > div {
-  background-color: rgba(255, 255, 255, 0.8);
-  text-align: left;
-  padding: 0px;
-  font-size: 30px;
-}
 
 .item1 {
   grid-column: 1 / span 2; /* Span 2 columns */
@@ -115,21 +86,8 @@ h3 {
 }
 
 /* Second grid container */
-.grid-container2 {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 3 equal columns */
-  gap: 10px;
-  background-color: #ffffff;
-  padding: 0px;
-  margin: 20px;
-}
 
-.grid-container2 > div {
-  background-color: rgba(255, 255, 255, 0.8);
-  text-align: left;
-  padding: 0px;
-  font-size: 30px;
-}
+
 
 .items1 {
   grid-column: 1;
@@ -168,17 +126,26 @@ a {
   text-decoration: none; /* Removes underline if desired */
 }
 
-/* Hover color */
-a:hover {
-  color: rgb(224, 12, 221);
-}
+@media screen and (max-width: 768px) {
+  .grid-container, .grid-container2 {
+    grid-template-columns: 1fr; /* Stack items in a single column */
+  }
 
-/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 700px) {
-  .row, .navbar {   
-    flex-direction: column;
+  .items, .items2, .items3, .items4, .items5 {
+    text-align: center;
+  }
+
+  .item, .item2, .item3, .item4 {
+    text-align: center;
+  }
+
+  p, h3 {
+    font-size: 16px; /* Adjust font size for readability */
   }
 }
+
+
+
 </style>
 </head>
 <body>
@@ -221,17 +188,17 @@ a:hover {
 
 
 <div class="grid-container">
-  <div class="item1"><img src="Isiko 2024.jpg" width="100%" height="auto"><p><small>Isiko script | writing system invention</small></p></div>
+  <div class="item1"><img src="Isiko 2024.jpg" width="100%" height="auto"><p><small>Isiko script <i>/ Writing system invention</i></small></p></div>
   <div class="item2"><p></div>
-  <div class="item3"><img src="Restitution-poster-3.jpg" width="100%" height="auto"><p><small>Posters | writing system invention</small></p></div>
+  <div class="item3"><img src="Restitution-poster-3.jpg" width="100%" height="auto"><p><small><i>Posters</i></small></p></div>
 </div>
 <br><br><br><br>
 
 <!-- 2023 - 2024 -->
 <div class="grid-container2">
   <div class="items1"></div>
-  <div class="items2"><a href="Manor/index.html"><img src="4a icon 2023.jpg" alt="print ad" width="100%" height="auto"></a><p><small>The Manor logo | visual identity</small></p></div>
-  <div class="items3"><a href="Serif_Furniture/index.html"><img src="serif 2024.jpg" alt="print ad" width="100%" height="auto"></a><p><small>Serif coffee table | furniture design | furniture construction</small></p></div>
+  <div class="items2"><a href="Manor/index.html"><img src="4a icon 2023.jpg" alt="print ad" width="100%" height="auto"></a><p><small>The Manor logo <i>/ Visual identity</i></small></p></div>
+  <div class="items3"><a href="Serif_Furniture/index.html"><img src="serif 2024.jpg" alt="print ad" width="100%" height="auto"></a><p><small>Serif coffee table <i>/ Furniture design / Furniture construction</i></small></p></div>
 </div>
 <br><br><br><br>
 
@@ -240,26 +207,27 @@ a:hover {
 
 <div class="grid-container">
   <div class="item1"><a href="Africa_Film_&_Art_Festival/index.html">
-    <img src="2023 AFAF.jpg" alt="print ad" width="100%" height="auto"></a><p><small>Africa Film + Art Festival logo | visual identity | posters | social media</small></p>
+    <img src="2023 AFAF.jpg" alt="print ad" width="100%" height="auto"></a><p><small>Africa Film + Art Festival <i>/ Logo / Visual identity / Posters / Social media</i></small></p>
   </div>
-  <div class="item2"><a href="The_Africa_Centre/"><img src="TAC_cover.jpg" alt="print ad" width="100%" height="auto"></a><p><small>The Africa Centre rebrand | logo | visual identity</small></p></div>
+  <div class="item2"><a href="The_Africa_Centre/"><img src="TAC_cover.jpg" alt="print ad" width="100%" height="auto"></a><p><small>The Africa Centre rebrand <I>/ Logo / Visual identity</I></small></p></div>
   <div class="item3"><a href="Sankofa/index.html"><img src="Sankofa image 2022.jpg" alt="print ad" width="100%" height="auto"></a><p><small>Sankofa experiemental display typeface</small></p></div>
 </div>
 <br><br><br><br><br>
 
 <!-- 2021 -->
 <div class="grid-container2">
-  <div class="items1"><a href="Africa_love_letters/index.html"><img src="2_Liberia 1732.jpg" alt="print ad" width="100%" height="auto"></a><p><small>Afrika: Love letters | experimental typography | lettering</small></p></div>
+  <div class="items1"><a href="Africa_love_letters/index.html"><img src="2_Liberia 1732.jpg" alt="print ad" width="100%" height="auto"></a><p><small>Afrika: Love letters <i>/ Experimental typography / Lettering</i></small></p></div>
   <div class="items2"></div>
-  <div class="items3"><a href="IPA/index.html"><img src="IPA 2021.jpg" alt="print ad" width="100%" height="auto"></a><p><small>Integrated Project Alliance (IPA) rebrand | logo | visual identity</small></p></div>
+  <div class="items3"><a href="IPA/index.html"><img src="IPA 2021.jpg" alt="print ad" width="100%" height="auto"></a><p><small>Integrated Project Alliance (IPA) rebrand <i>/ Logo / Visual identity</i></small></p></div>
 </div>
 <br><br><br><br>
 
 <!-- 2020 -->
 <div class="grid-container2">
-  <div class="items1"><a href="Mcdonalds/index.html"><img src="Mcd.png" alt="print ad" width="100%" height="auto"></a><p><small> McDonald's South Africa | Ideation | Television Commercials</small></p></div>
-  <div class="items2"><a href="Bhala_app/index.html"><img src="bhala 2a.jpg" alt="print ad" width="100%" height="auto"></a><p><small> Bhala Keyboard logo | visual identity | social media | advertisement</small></p></div>
-  <div class="items3"></div>
+  <div class="items1"><a href="Mcdonalds/index.html"><img src="Mcd.png" alt="print ad" width="100%" height="auto"></a><p><small> McDonald's South Africa <i>/ Ideation / Television Commercials</i></small></p></div>
+  <div class="items2"><a href="Bhala_app/index.html"><img src="bhala 2a.jpg" alt="print ad" width="100%" height="auto"></a><p><small> Bhala Keyboard <i>/ Logo / Visual identity / Social media / Advertisement</i></small></p></div>
+  <div class="items3"><p> <strong><i><br><br><br>“Until the lion learns how to write, every story will glorify the hunter.”</i></strong><br>- Chinua Achebe. Things Fall Apart, 1958</p>
+    </div>
 </div>
 <br><br>
 <br><br><br>
@@ -267,15 +235,15 @@ a:hover {
 <!-- 2017, 2018 -->
 <div class="grid-container2">
   <div class="items1"></div>
-  <div class="items2"><a href="Crafting_Articulation/index.html"><img src="Voiceworks 2017.jpg" alt="print ad" width="100%" height="auto"></a><p><small> Voiceworks print advertisement | indoor posters</small></p></div>
-  <div class="items3"><a href="Apartheid_Museum _Flags/index.html"><img src="Apartheid 2018.jpg" alt="print ad" width="100%" height="auto"></a><p><small>Apartheid Museum indoor posters | advertisement</small></p></div>
+  <div class="items2"><a href="Crafting_Articulation/index.html"><img src="Voiceworks 2017.jpg" alt="print ad" width="100%" height="auto"></a><p><small> Voiceworks <i>/ Print advertisement / Indoor posters</i></small></p></div>
+  <div class="items3"><a href="Apartheid_Museum _Flags/index.html"><img src="Apartheid 2018.jpg" alt="print ad" width="100%" height="auto"></a><p><small>Apartheid Museum <i>/ Indoor posters / Advertisement/</i></small></p></div>
 </div>
 <br><br><br>
 
 <!-- 2016 -->
 <div class="grid-container">
-  <div class="item1"><a href="Soweto_gold_76/index.html"><img src="Soweto Gold 2016.jpg" alt="print ad" width="100%" height="auto"></a><p><small>Soweto Gold Beer | Package design | typeface | indoor posters</small></p></div>
-  <div class="item2"><a href="Apartheid_Museum/index.html"><img src="Apartheid museum 2016.jpg" alt="print ad" width="100%" height="auto"></a><p><small>Apartheid Museum Print advertisement</small></p></div>
+  <div class="item1"><a href="Soweto_gold_76/index.html"><img src="Soweto Gold 2016.jpg" alt="print ad" width="100%" height="auto"></a><p><small>Soweto Gold Beer <i>/ Package design / Typeface / Indoor posters</i></small></p></div>
+  <div class="item2"><a href="Apartheid_Museum/index.html"><img src="Apartheid museum 2016.jpg" alt="print ad" width="100%" height="auto"></a><p><small>Apartheid Museum <i>/ Print advertisement</i></small></p></div>
   <div class="item3"></div>
 </div>
 <br><br><br><br>
@@ -284,7 +252,7 @@ a:hover {
 <div class="grid-container2">
   <div class="items1"></div>
   <div class="items2"></div>
-  <div class="items3"><a href="Ikwekwezi_fm/index.html"><img src="IKwekwezi FM rebrand.jpg" alt="print ad" width="100%" height="auto"></a><p><small>IKwekwezi FM rebrand | logo | visual identity</small></p></div>
+  <div class="items3"><a href="Ikwekwezi_fm/index.html"><img src="IKwekwezi FM rebrand.jpg" alt="print ad" width="100%" height="auto"></a><p><small>IKwekwezi FM rebrand <i>/ Logo / Visual identity</i></small></p></div>
 </div>
 <br><br><br><br>
 
