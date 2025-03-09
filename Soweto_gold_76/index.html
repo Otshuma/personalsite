@@ -24,10 +24,10 @@
   box-sizing: border-box;
 }
 
-/* Style the body */
 body {
   font-family: "neue-haas-grotesk-display", sans-serif;
   margin: 0;
+  padding: 0;
 }
 
 /* Header/logo Title */
@@ -41,11 +41,15 @@ body {
 /* Style the top navigation bar */
 .grid-container2 {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 3 equal columns */
+  grid-template-columns: repeat(4, 1fr);
   gap: 10px;
   background-color: #ffffff;
   padding: 0px;
   margin: 20px;
+  min-width: 300px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .grid-container2 > div {
@@ -53,12 +57,15 @@ body {
   text-align: left;
   padding: 0px;
   font-size: 30px;
+  min-width: 0;
 }
 
-/* Column container */
-.row {  
-  display: flex;
-  flex-wrap: wrap;
+/* Add specific styling for the contact information div */
+.items5 p {
+  font-size: 16px;
+  min-width: 150px;
+  white-space: normal;
+  word-wrap: break-word;
 }
 
 img {
@@ -68,6 +75,11 @@ img {
   padding: 0;
 }
 
+h2 {
+  padding: 0px;
+  margin: 0px;
+}
+
 p {
   font-family: "neue-haas-grotesk-display", sans-serif;
   font-weight: 500;
@@ -75,12 +87,20 @@ p {
   line-height: 1.4;
 }
 
-/* Create two unequal columns that sits next to each other */
+/* Column container */
+.row {  
+  display: flex;
+  flex-wrap: wrap;
+}
+
 /* Sidebar/left column */
 .side {
   flex: 25%;
   background-color: #f1f1f1;
   padding: 20px;
+  position: sticky;
+  top: 120px;
+  height: fit-content;
 }
 
 /* Main column */
@@ -90,7 +110,7 @@ p {
   padding-top: 0px;
   padding-left: 20px;
   padding-right: 20px;
-  gap: Opx;
+  gap: 0px;
 }
 
 .separate {
@@ -98,13 +118,17 @@ p {
   padding: 20px;
 }
 
-/* Fake image, just for this example */
-.fakeimg {
-  background-color: #aaa;
-  padding: 20px;
+.footerflex-container {
+  display: flex;
+  justify-content: space-between;
+  line-height: .99;
 }
 
-/* Style for bottom images */
+.footerflex-container > div {
+  margin: 10px;
+  font-size: 1.2rem;
+}
+
 .bottom-images {
   display: flex;              /* Use Flexbox to align images side by side */
   justify-content: space-between; /* Add space between the images */
@@ -117,29 +141,66 @@ p {
   height: auto;               /* Maintain aspect ratio */
 }
 
-.footerflex-container {
-  display: flex;
-  justify-content: space-between;
-  justify-content: space-between;
-  line-height: .99;
-}
-
-.footerflex-container > div {
-  margin: 10px;
-  font-size: var(--size-large, 1.2rem);
-}
-
 /* Footer */
 .footer {
   padding: 20px;
-  text-align:justify;
+  text-align: justify;
   background: #ffffff;
 }
 
-/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+a {
+  color: rgb(3, 212, 10);
+  text-decoration: none;
+}
+
+/* Mobile Responsive Adjustments */
 @media screen and (max-width: 700px) {
-  .row, .navbar {   
+  .grid-container2 {
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    margin: 10px;
+  }
+  
+  .items1 {
+    grid-column: 1;
+  }
+  
+  .items5 {
+    grid-column: 2;
+  }
+  
+  .items2, .items4 {
+    display: none;
+  }
+  
+  .items5 p {
+    font-size: 14px !important;
+  }
+  
+  .row {   
     flex-direction: column;
+  }
+  
+  .side {
+    position: static !important;
+    order: -1;
+    width: 100%;
+    flex: 100%;
+  }
+  
+  .main {
+    width: 100%;
+    flex: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  .separate {
+    padding: 10px;
+  }
+  
+  .footerflex-container {
+    font-size: 1rem;
   }
 }
 </style>
@@ -166,7 +227,7 @@ p {
 <!-- The flexible grid (content) -->
 <div class="separate">
   <div>
-    <img src="Soweto gold pic edit2.jpg" alt="Description of soweto gold beer" style="width:100%; height:auto;">
+    <img src="Soweto_gold_pic_edit2.webp" alt="Description of soweto gold beer" style="width:100%; height:auto;">
   </div>
 </div>
 
@@ -217,22 +278,22 @@ p {
       <source src="Soweto Gold _76 _Marked by Bravery_.mp4" type="video/mp4">
     Your browser does not support the video tag.
     </video>
-    <img src="Soweto Gold 76 hand signed bottles.jpg" alt="Description of image 2" style="width:100%; height:auto;">
-    <img src="SG11 2 2.jpg" alt="Description of image 3" style="width:100%; height:auto;">
-    <img src="SG11.jpg" alt="Description of image 3" style="width:100%; height:auto;">
-    <img src="SG-strip.jpg" alt="Description of image 4" style="width:100%; height:auto;">
-    <img src="SG2.jpg" alt="Description of image 5" style="width:100%; height:auto;">
+    <img src="Soweto_Gold_76_hand_signed_bottles.webp" alt="Description of image 2" style="width:100%; height:auto;">
+    <img src="SG11_2_2.webp" alt="Description of image 3" style="width:100%; height:auto;">
+    <img src="SG11.webp" alt="Description of image 3" style="width:100%; height:auto;">
+    <img src="SG-strip.webp" alt="Description of image 4" style="width:100%; height:auto;">
+    <img src="SG2.webp" alt="Description of image 5" style="width:100%; height:auto;">
+ 
     <div class="bottom-images">
-      <img src="Inspired+by+76_Soweto+Gold+76.jpg" alt="Description of image 8">
-      <img src="The+mark+of+bravery_Soweto+Gold+76.jpg" alt="Description of image 9">
+      <img src="Forever_heroes_Soweto+Gold+76.webp" alt="Description of image 8">
+      <img src="A_salute_to_freedom_Soweto_Gold.webp" alt="Description of image 9">
     </div>
-    <img src="SG3.jpg" alt="Description of image 6" style="width:100%; height:auto;">
+    <img src="SG3.webp" alt="Description of image 6" style="width:100%; height:auto;">
   
     <div class="bottom-images">
-      <img src="Forever+heroes_Soweto+Gold+76.jpg" alt="Description of image 8">
-      <img src="A+salute+to+freedom_Soweto+Gold.jpg" alt="Description of image 9">
+      <img src="Inspired_by_76_Soweto+Gold+76.webp" alt="Description of image 8">
+      <img src="The_mark_of_bravery_Soweto_Gold_76.webp" alt="Description of image 9">
     </div>
-    
 
   </div>
 </div>

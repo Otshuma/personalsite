@@ -21,10 +21,10 @@
   box-sizing: border-box;
 }
 
-/* Style the body */
 body {
   font-family: "neue-haas-grotesk-display", sans-serif;
   margin: 0;
+  padding: 0;
 }
 
 /* Header/logo Title */
@@ -38,11 +38,15 @@ body {
 /* Style the top navigation bar */
 .grid-container2 {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 3 equal columns */
+  grid-template-columns: repeat(4, 1fr);
   gap: 10px;
   background-color: #ffffff;
   padding: 0px;
   margin: 20px;
+  min-width: 300px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .grid-container2 > div {
@@ -50,13 +54,15 @@ body {
   text-align: left;
   padding: 0px;
   font-size: 30px;
+  min-width: 0;
 }
 
-
-/* Column container */
-.row {  
-  display: flex;
-  flex-wrap: wrap;
+/* Add specific styling for the contact information div */
+.items5 p {
+  font-size: 16px;
+  min-width: 150px;
+  white-space: normal;
+  word-wrap: break-word;
 }
 
 img {
@@ -66,6 +72,11 @@ img {
   padding: 0;
 }
 
+h2 {
+  padding: 0px;
+  margin: 0px;
+}
+
 p {
   font-family: "neue-haas-grotesk-display", sans-serif;
   font-weight: 500;
@@ -73,12 +84,20 @@ p {
   line-height: 1.4;
 }
 
-/* Create two unequal columns that sits next to each other */
+/* Column container */
+.row {  
+  display: flex;
+  flex-wrap: wrap;
+}
+
 /* Sidebar/left column */
 .side {
   flex: 25%;
   background-color: #f1f1f1;
   padding: 20px;
+  position: sticky;
+  top: 120px;
+  height: fit-content;
 }
 
 /* Main column */
@@ -88,7 +107,7 @@ p {
   padding-top: 0px;
   padding-left: 20px;
   padding-right: 20px;
-  gap: Opx;
+  gap: 0px;
 }
 
 .separate {
@@ -96,35 +115,77 @@ p {
   padding: 20px;
 }
 
-/* Fake image, just for this example */
-.fakeimg {
-  background-color: #aaa;
-  padding: 20px;
-}
-
 .footerflex-container {
   display: flex;
-  justify-content: space-between;
   justify-content: space-between;
   line-height: .99;
 }
 
 .footerflex-container > div {
   margin: 10px;
-  font-size: var(--size-large, 1.2rem);
+  font-size: 1.2rem;
 }
 
 /* Footer */
 .footer {
   padding: 20px;
-  text-align:justify;
+  text-align: justify;
   background: #ffffff;
 }
 
-/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+a {
+  color: rgb(3, 212, 10);
+  text-decoration: none;
+}
+
+/* Mobile Responsive Adjustments */
 @media screen and (max-width: 700px) {
-  .row, .navbar {   
+  .grid-container2 {
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    margin: 10px;
+  }
+  
+  .items1 {
+    grid-column: 1;
+  }
+  
+  .items5 {
+    grid-column: 2;
+  }
+  
+  .items2, .items4 {
+    display: none;
+  }
+  
+  .items5 p {
+    font-size: 14px !important;
+  }
+  
+  .row {   
     flex-direction: column;
+  }
+  
+  .side {
+    position: static !important;
+    order: -1;
+    width: 100%;
+    flex: 100%;
+  }
+  
+  .main {
+    width: 100%;
+    flex: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  .separate {
+    padding: 10px;
+  }
+  
+  .footerflex-container {
+    font-size: 1rem;
   }
 }
 </style>
@@ -149,7 +210,7 @@ p {
 <!-- The flexible grid (content) -->
 <div class="separate">
   <div>
-    <img src="manorcover2.jpg" alt="Description of image 2" style="width:100%; height:auto;">
+    <img src="manorcover2copy.webp" alt="Description of image 2" style="width:100%; height:auto;">
   </div>
 </div>
 
@@ -178,7 +239,7 @@ p {
 
 
       <div class="footerflex-container">
-        <div><a href=""><strong><span style="color:gray">PREV:</span></strong></a></div>
+        <div><a href="../Posters/index.html"><strong><span style="color:gray">PREV:</span></strong></a></div>
         
         <div><a href="../Serif_Furniture/index.html"><strong><span style="color:gray">NEXT:</span></strong></a></div>
         
@@ -193,20 +254,20 @@ p {
     </iframe>
 
 
-    <img src="4aa.jpg" alt="Description of image 2" style="width:100%; height:auto;">
-    <img src="2.jpg" alt="Description of image 2" style="width:100%; height:auto;">
-    <img src="3.jpg" alt="Description of image 2" style="width:100%; height:auto;">
-    <img src="4.jpg" alt="Description of image 2" style="width:100%; height:auto;">
-    <img src="5.jpg" alt="Description of image 2" style="width:100%; height:auto;">
-    <img src="6.jpg" alt="Description of image 2" style="width:100%; height:auto;">
-    <img src="1.jpg" alt="Description of image 2" style="width:100%; height:auto;">
-    <img src="7.jpg" alt="Description of image 2" style="width:100%; height:auto;">
-    <img src="8.jpg" alt="Description of image 2" style="width:100%; height:auto;">
-    <img src="Manor-mag.jpg" alt="Description of image 2" style="width:100%; height:auto;">
-    <img src="themanor_pic.jpg" alt="Description of image 2" style="width:100%; height:auto;">
+    <img src="4aa.webp" alt="Description of image 2" style="width:100%; height:auto;">
+    <img src="2copy.webp" alt="Description of image 2" style="width:100%; height:auto;">
+    <img src="3copy.webp" alt="Description of image 2" style="width:100%; height:auto;">
+    <img src="4copy.webp" alt="Description of image 2" style="width:100%; height:auto;">
+    <img src="5copy.webp" alt="Description of image 2" style="width:100%; height:auto;">
+    <img src="6copy.webp" alt="Description of image 2" style="width:100%; height:auto;">
+    <img src="1copy.webp" alt="Description of image 2" style="width:100%; height:auto;">
+    <img src="7copy.webp" alt="Description of image 2" style="width:100%; height:auto;">
+    <img src="8copy.webp" alt="Description of image 2" style="width:100%; height:auto;">
+    <img src="Manor_mag_copy.webp" alt="Description of image 2" style="width:100%; height:auto;">
+    <img src="themanor_pic.webp" alt="Description of image 2" style="width:100%; height:auto;">
    
-    <img src="14.jpg" alt="Description of image 2" style="width:100%; height:auto;">
-    <img src="11.jpg" alt="Description of image 2" style="width:100%; height:auto;">
+    <img src="14copy.webp" alt="Description of image 2" style="width:100%; height:auto;">
+    <img src="11copy.webp" alt="Description of image 2" style="width:100%; height:auto;">
 
 
   </div>
