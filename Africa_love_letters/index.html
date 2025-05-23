@@ -199,7 +199,16 @@ a {
   }
   
   .two-column {
-    column-count: 1;
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+/* Additional breakpoint for iPhone 13 and similar devices */
+@media screen and (max-width: 430px) {
+  .two-column {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
   }
 }
 </style>
