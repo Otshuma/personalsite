@@ -149,9 +149,9 @@ a {
 }
 
 /* Mobile Responsive Adjustments */
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 768px) {
   .grid-container2 {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 5px;
     margin: 10px;
   }
@@ -202,15 +202,18 @@ a {
     grid-template-columns: 1fr;
     gap: 0;
   }
-}
-
-/* Additional breakpoint for iPhone 13 and similar devices */
-@media screen and (max-width: 430px) {
+  
+  @media screen and (max-width: 430px) {
   .two-column {
     grid-template-columns: 1fr !important;
     gap: 0 !important;
   }
+
+
+
 }
+
+
 </style>
 </head>
 <body>
