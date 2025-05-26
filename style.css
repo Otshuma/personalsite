@@ -129,6 +129,18 @@ p {
     height: 100%;
 }
 
+/* Style for bottom images */
+.bottom-images {
+    display: flex;              /* Use Flexbox to align images side by side */
+    justify-content: space-between; /* Add space between the images */
+    gap: 2px;                  /* Optional gap between images */
+    margin-top: 0px;           /* Add some spacing above the images */
+}
+  
+.bottom-images img {
+    width: calc(50% - 2px);    /* Each image takes 50% of the container width minus the gap */
+    height: auto;               /* Maintain aspect ratio */
+}
 
 
 a {
