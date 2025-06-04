@@ -3,6 +3,7 @@
 <head>
 <title>Osmond Tshuma</title>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <meta name="author" content="Osmond Tshuma">
 <meta name="keywords" content="Osmond Tshuma, Zimbabwean designer, Africa writing systems, Zimbabwe writing system, Graphic design, graphic design in Zimbabwe">
@@ -13,154 +14,333 @@
 <meta property="og: image" content="./icon">
 <link rel="icon" type="png" href="./icon.png"></link>
 
-
 <link rel="stylesheet" href="https://use.typekit.net/hyh7esp.css">
 
+
 <style>
-* {
-  box-sizing: border-box;
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Style the body */
+  body {
+    font-family: "neue-haas-grotesk-display", sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Header/logo Title */
+  .header {
+    padding: 60px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+  }
+  
+  /* Main grid containers */
+  .grid-container, .grid-container2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 20px;
+  }
+  
+  /* Ensuring images are responsive */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Paragraphs and Headings */
+  p {
+    font-weight: 500;
+    font-size: 18px;
+    margin: 15px 0px;
+  }
+  
+  h3 {
+    font-weight: 500;
+    font-size: 18px;
+    text-align: left;
+  }
+  
+  
+  /* First grid layout - desktop */
+  @media screen and (min-width: 769px) {
+    .item1 {
+      grid-column: 1 / span 2;
+      grid-row: 1;
+    }
+  
+    .item2 {
+      grid-column: 3;
+      grid-row: 1;
+    }
+  
+    .item3 {
+      grid-column: 4;
+      grid-row: 1;
+    }
+  
+    .item4 {
+      grid-column: 1 / span 4;
+      grid-row: 2;
+    }
+  
+    /* Second grid layout - desktop */
+    .items1 {
+      grid-column: 1;
+      grid-row: 1;
+    }
+  
+    .items2 {
+      grid-column: 2;
+      grid-row: 1;
+    }
+  
+    .items3 {
+      grid-column: 3 / span 2;
+      grid-row: 1;
+    }
+  
+    .items4 {
+      grid-column: 3;
+      grid-row: 1;
+    }
+  
+    .items5 {
+      grid-column: 4;
+      grid-row: 1;
+    }
+  
+  
+  }
+  
+  /* Footer */
+  .footer {
+    padding: 20px;
+    text-align: justify;
+    background: #ffffff;
+  }
+  
+  a {
+    color: rgb(3, 212, 10);
+    text-decoration: none;
+  }
+
+/* Desktop layout - First grid */
+@media screen and (min-width: 769px) {
+  .item1 {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+  }
+
+  .item2 {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .item3 {
+    grid-column: 4;
+    grid-row: 1;
+  }
+
+  .item4 {
+    grid-column: 1 / span 4;
+    grid-row: 2;
+  }
+
+  /* Second grid layout - desktop */
+  .items1 {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .items2 {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .items3 {
+    grid-column: 3 / span 2;
+    grid-row: 1;
+  }
+
+  .items4 {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .items5 {
+    grid-column: 4;
+    grid-row: 1;
+  }
 }
 
-/* Style the body */
-body {
-  font-family: "neue-haas-grotesk-display", sans-serif;
-  margin: 0;
-  padding: 0px;
-  overflow-x: hidden;
-  width: 100%;
-  box-sizing: border-box;
-
+/* Tablet styles */
+@media screen and (max-width: 768px) and (min-width: 481px) {
+  .grid-container, .grid-container2 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 15px;
+  }
+  
+  p, h3 {
+    font-size: 16px;
+  }
+  
+  .header {
+    padding: 40px 20px;
+  }
 }
 
-/* Header/logo Title */
-.header {
-  padding: 60px;
-  text-align: center;
-  background: #1abc9c;
-  color: white;
+/* Mobile styles */
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+  
+  .header {
+    padding: 30px 15px;
+  }
+  
+  .grid-container, .grid-container2 {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin: 15px 10px;
+    padding: 0;
+  }
+  
+  /* Reset all grid positioning for mobile */
+  .item1, .item2, .item3, .item4,
+  .items1, .items2, .items3, .items4, .items5 {
+    grid-column: 1;
+    grid-row: auto;
+  }
+  
+  .grid-container > div, .grid-container2 > div {
+    padding: 20px 15px;
+    margin-bottom: 15px;
+  }
+  
+  /* Mobile typography */
+  p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 1.2em;
+  }
+  
+  h3 {
+    font-size: 18px;
+    margin-bottom: 0.8em;
+  }
+  
+  /* Better mobile link handling */
+  a {
+    display: inline-block;
+    padding: 2px 0;
+    line-height: 1.4;
+  }
+  
+  /* Logo/image adjustments */
+  .items1 img {
+    margin: 0 auto 15px auto;
+  }
+  
+  /* Mobile-specific spacing */
+  br {
+    display: block;
+    margin: 8px 0;
+    content: "";
+  }
+  
+  /* Small text adjustments */
+  small {
+    font-size: 14px;
+    display: block;
+    margin-top: 10px;
+    line-height: 1.4;
+  }
+  
+  /* Strong text emphasis */
+  strong {
+    display: block;
+    margin: 15px 0 10px 0;
+    font-size: 17px;
+  }
+  
+  /* Footer adjustments */
+  .footer {
+    padding: 20px 15px;
+    margin: 0 10px;
+  }
+  
+  /* HR adjustments */
+  hr {
+    margin: 20px 0;
+    border: none;
+    height: 1px;
+    background-color: #ddd;
+  }
 }
 
-
-img {
-  width: 100%;
-  display: block;
-  margin: 0;
-  padding: 0;
-}
-
-p {
-  font-family: "neue-haas-grotesk-display", sans-serif;
-  font-weight: 500;
-  font-size: 18px;
-}
-
-h3 {
-  font-family: "neue-haas-grotesk-display", sans-serif;
-  font-weight: 500;
-  font-size: 18px;
-  text-align: left;
-}
-
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
-  gap: 10px;
-  background-color: #ffffff;
-  padding: 0px;
-  margin: 20px;
-}
-
-.grid-container > div {
-  background-color: rgba(255, 255, 255, 0.8);
-  text-align: left;
-  padding: 0px;
-  font-size: 30px;
-}
-
-.item1 {
-  grid-column: 1 / span 2; /* Span 2 columns */
-  grid-row: 1;
-}
-
-.item2 {
-  grid-column: 3; /* Occupy column 3 */
-  grid-row: 1;
-}
-
-.item3 {
-  grid-column: 4; /* Occupy column 4 */
-  grid-row: 1;
-}
-
-.item4 {
-  grid-column: 1 / span 4; /* Span all 4 columns */
-  grid-row: 2;
-}
-
-/* Second grid container */
-.grid-container2 {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 3 equal columns */
-  gap: 10px;
-  background-color: #ffffff;
-  padding: 0px;
-  margin: 20px;
-}
-
-.grid-container2 > div {
-  background-color: rgba(255, 255, 255, 0.8);
-  text-align: left;
-  padding: 0px;
-  font-size: 30px;
-}
-
-.items1 {
-  grid-column: 1;
-  grid-row: 1;
-}
-
-.items2 {
-  grid-column: 2;
-  grid-row: 1;
-}
-
-.items3 {
-  grid-column: 3 / span 2; /* Span 2 columns */
-  grid-row: 1;
-}
-
-.items4 {
-  grid-column: 3; /* Span 2 columns */
-  grid-row: 1;
-}
-
-.items5 {
-  grid-column: 4; /* Span 2 columns */
-  grid-row: 1;
+/* Very small mobile devices */
+@media screen and (max-width: 320px) {
+  .grid-container, .grid-container2 {
+    margin: 10px 5px;
+  }
+  
+  .grid-container > div, .grid-container2 > div {
+    padding: 15px 10px;
+  }
+  
+  p {
+    font-size: 15px;
+  }
+  
+  .header {
+    padding: 25px 10px;
+  }
 }
 
 /* Footer */
 .footer {
   padding: 20px;
-  text-align:justify;
+  text-align: left;
   background: #ffffff;
+  border-top: 1px solid #ddd;
+  margin-top: 40px;
 }
 
-a {
-  color: #F2824F; /* Change to your desired color */
-  text-decoration: none; /* Removes underline if desired */
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
-/* Hover color */
-a:hover {
-  color: rgb(224, 12, 221);
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  a {
+    color: #0066cc;
+    text-decoration: underline;
+  }
 }
 
-
-/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 700px) {
-  .row, .navbar {   
-    flex-direction: column;
+/* Touch-friendly improvements */
+@media (hover: none) and (pointer: coarse) {
+  a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 4px;
   }
 }
 </style>
@@ -173,7 +353,7 @@ a:hover {
 <!-- Grid information -->
 <div class="grid-container2">
   <div class="items1"><a href="../index.html"><img src="osmond logo.png" width="100%" height="auto"></a></div>
-  <div class="items2"><p>I am a Zimbabwean artist, designer, art director, and typographer based in Providence, Rhode Island. I am also the co-founder of <a href=https://mamgobozidesign.com>Mam’Gobozi Design Factory</a>, a South African design studio dedicated to celebrating African identity through design, art, and product creation. <br><br>My work challenges conventional approaches, serving as both a call to decolonize Eurocentrism in graphic design and media and an ode to the beauty of celebrating African culture, heritage, and belonging.</p></div>
+  <div class="items2"><p>I am a Zimbabwean artist, designer, art director, and typographer based in New York, USA. I am also the co-founder of <a href=https://mamgobozidesign.com>Mam’Gobozi Design Factory</a>, a South African design studio dedicated to celebrating African identity through design, art, and product creation. <br><br>My work challenges conventional approaches, serving as both a call to decolonize Eurocentrism in graphic design and media and an ode to the beauty of celebrating African culture, heritage, and belonging.</p></div>
   <div class="items4"><p>
     
     2023 — 2025<br>
