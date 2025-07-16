@@ -1,139 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="google-site-verification" content="fAPaaKlvbAjvMpUcoMnEyLb98wY-DldStlBLBu75zo4" />
-  <title>Osmond Tshuma</title>
-  <meta name="author" content="Osmond Tshuma">
-  <meta name="keywords" content="Osmond Tshuma, Zimbabwean designer, Africa writing systems, Zimbabwe writing system, Graphic design, graphic design in Zimbabwe">
-  <meta name="description" content="Osmond Tshuma's body of work">
-  <meta property="og:url" content="https://www.osmondtshuma.com/">
-  <meta property="og:title" content="Osmond Tshuma">
-  <meta property="og:description" content="Osmond Tshuma's body of work">
-  <meta property="og:image" content="./icon.png">
-  <link rel="icon" type="image/png" href="./icon.png">
-  <link rel="stylesheet" href="https://use.typekit.net/hyh7esp.css">
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SCR44RRPBE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-SCR44RRPBE');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="fAPaaKlvbAjvMpUcoMnEyLb98wY-DldStlBLBu75zo4" />
+<title>Osmond Tshuma</title>
+<meta name="author" content="Osmond Tshuma">
+<meta name="keywords" content="Osmond Tshuma, Zimbabwean designer, Africa writing systems, Zimbabwe writing system, Graphic design, graphic design in Zimbabwe">
+<meta name="description" content="Osmond Tshuma's body of work">
+<meta property="og:url" content="https://www.osmondtshuma.com/">
+<meta property="og:title" content="Osmond Tshuma">
+<meta property="og:description" content="Osmond Tshuma's body of work">
+<meta property="og:image" content="./icon.png">
+<link rel="icon" type="image/png" href="./icon.png">
+<link rel="stylesheet" href="https://use.typekit.net/hyh7esp.css">
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
-    body {
-      font-family: "neue-haas-grotesk-display", sans-serif;
-      line-height: 1.6;
-      overflow-x: hidden;
-      width: 100%;
-      box-sizing: border-box;
-    }
+  body {
+    font-family: "neue-haas-grotesk-display", sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+    width: 100%;
+    box-sizing: border-box;
+  }
 
-    img {
-      width: 100%;
-      display: block;
-    }
+  img {
+    width: 100%;
+    display: block;
+  }
 
+  .grid-container2 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 1000;
+  }
+
+  .grid-container2 > div {
+    text-align: left;
+  }
+
+  .items5 p {
+    font-size: 16px;
+    white-space: normal;
+    word-wrap: break-word;
+  }
+
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px; /* Gap between images on desktop */
+    padding: 20px;
+  }
+
+  .image-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between image and caption on desktop */
+  }
+
+  .image-item figcaption {
+    font-size: 14px;
+    text-align: left;
+    color: #333;
+  }
+
+  .footer {
+    padding: 20px;
+    text-align: left;
+    background: white;
+  }
+
+  .footer p {
+    font-size: 14px;
+  }
+
+  a {
+    color: rgb(3, 212, 10);
+    text-decoration: none;
+  }
+
+  .footerflex-container {
+    display: flex;
+    justify-content: space-between;
+    line-height: .99;
+  }
+
+  .footerflex-container > div {
+    margin: 20px;
+    font-size: 1.2rem;
+  }
+
+  @media screen and (max-width: 700px) {
     .grid-container2 {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
-      padding: 10px;
-      position: sticky;
-      top: 0;
-      background: white;
-      z-index: 1000;
+      grid-template-columns: 1fr 1fr;
+      gap: 5px;
     }
 
-    .grid-container2 > div {
-      text-align: left;
+    .items2, .items4 {
+      display: none;
     }
 
     .items5 p {
-      font-size: 16px;
-      white-space: normal;
-      word-wrap: break-word;
+      font-size: 14px !important;
     }
 
     .image-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 30px; /* Gap between images on desktop */
-      padding: 20px;
+      grid-template-columns: repeat(2, 1fr); /* 2 images per row on mobile */
+      gap: 15px; /* Smaller gap between images on mobile */
     }
 
     .image-item {
-      display: flex;
-      flex-direction: column;
-      gap: 10px; /* Space between image and caption on desktop */
+      gap: 5px; /* Smaller space between image and caption on mobile */
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .image-grid {
+      grid-template-columns: 1fr; /* 1 image per row on very small screens */
+      gap: 10px; /* Even smaller gap for very small screens */
     }
 
-    .image-item figcaption {
-      font-size: 14px;
-      text-align: left;
-      color: #333;
+    .image-item {
+      gap: 5px; /* Consistent small space between image and caption */
     }
-
-    .footer {
-      padding: 20px;
-      text-align: left;
-      background: white;
-    }
-
-    .footer p {
-      font-size: 14px;
-    }
-
-    a {
-      color: rgb(3, 212, 10);
-      text-decoration: none;
-    }
-
-    .footerflex-container {
-        display: flex;
-        justify-content: space-between;
-        line-height: .99;
-    }
-
-    .footerflex-container > div {
-        margin: 20px;
-        font-size: 1.2rem;
-    }
-
-    @media screen and (max-width: 700px) {
-      .grid-container2 {
-        grid-template-columns: 1fr 1fr;
-        gap: 5px;
-      }
-
-      .items2, .items4 {
-        display: none;
-      }
-
-      .items5 p {
-        font-size: 14px !important;
-      }
-
-      .image-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 images per row on mobile */
-        gap: 15px; /* Smaller gap between images on mobile */
-      }
-
-      .image-item {
-        gap: 5px; /* Smaller space between image and caption on mobile */
-      }
-    }
-
-    @media screen and (max-width: 500px) {
-      .image-grid {
-        grid-template-columns: 1fr; /* 1 image per row on very small screens */
-        gap: 10px; /* Even smaller gap for very small screens */
-      }
-
-      .image-item {
-        gap: 5px; /* Consistent small space between image and caption */
-      }
-    }
+  }
   </style>
 </head>
 <body>
