@@ -203,7 +203,40 @@ a {
     display: block;
     margin-top: 8px;
   }
+
+  /* Awards section mobile fix */
+  .items2 p img {
+    height: 25px !important; /* Smaller on mobile */
+    margin: 2px 3px; /* Add spacing between icons */
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  /* Create line break before awards */
+  .items2 p strong:first-of-type {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  /* Force awards images to stay together and wrap properly */
+  .items2 p {
+    line-height: 1.6;
+  }
+  
+  /* Alternative: Stack awards vertically on very small screens */
+  @media screen and (max-width: 480px) {
+    .items2 p img {
+      display: block;
+      margin: 5px 0;
+      height: 30px;
+    }
+  }
 }
+
+
+
+
 </style>
 </head>
 
@@ -216,17 +249,21 @@ a {
 <div class="grid-container2">
   <div class="items1"><a href="../index.html"><img src="osmond logo.png" width="100%" height="auto"></a></div>
   <div class="items2"><p>I’m a Zimbabwean designer, art director, and typographer based in New York, USA. I specialize in crafting thoughtful, story-driven identities and design systems that merge research, symbolism, and strong visual form. With over a decade of experience leading creative projects across cultural, non-profit, and commercial sectors, I bring a distinctive sensitivity to visual language; balancing clarity, emotional resonance, and narrative intent across brand, editorial, and type design.<br><br>
-    <strong>Awards</strong><br><br>
-    <img src="cannes.svg" alt="icon" style="height: 35px; display: inline-block; vertical-align: middle;">
-    <img src="cannes.svg" alt="icon" style="height: 35px; display: inline-block; vertical-align: middle;">
-    <img src="The_One_Show-logo_black-01.svg" alt="icon" style="height: 30px; display: inline-block; vertical-align: bottom;">
-    <img src="The_One_Show-logo_black-01.svg" alt="icon" style="height: 30px; display: inline-block; vertical-align: bottom;">
-    <img src="loeries2-01.svg" alt="icon" style="height: 30px; display: inline-block; vertical-align: bottom;">
-    <img src="loeries2-01.svg" alt="icon" style="height: 30px; display: inline-block; vertical-align: bottom;">
-    <img src="loeries2-01.svg" alt="icon" style="height: 30px; display: inline-block; vertical-align: bottom;">
-    <img src="pendoring.svg" alt="icon" style="height: 38px; display: inline-block; vertical-align: bottom;">
+    <strong>Awards</strong><br><br></p>
+    
+    <div class="awards-container">
+      <img src="cannes.svg" alt="icon" style="height: 35px; display: inline-block; vertical-align: middle;">
+      <img src="cannes.svg" alt="icon" style="height: 35px; display: inline-block; vertical-align: middle;">
+      <img src="The_One_Show-logo_black-01.svg" alt="icon" style="height: 30px; display: inline-block; vertical-align: bottom;">
+      <img src="The_One_Show-logo_black-01.svg" alt="icon" style="height: 30px; display: inline-block; vertical-align: bottom;">
+      <img src="loeries2-01.svg" alt="icon" style="height: 30px; display: inline-block; vertical-align: bottom;">
+      <img src="loeries2-01.svg" alt="icon" style="height: 30px; display: inline-block; vertical-align: bottom;">
+      <img src="loeries2-01.svg" alt="icon" style="height: 30px; display: inline-block; vertical-align: bottom;">
+      <img src="pendoring.svg" alt="icon" style="height: 38px; display: inline-block; vertical-align: bottom;">
+    </div>
+    
 
-    </p>
+  
   </div>
   <div class="items4"><p>
     
